@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>materias del cobach</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<header>
+    <img class="banner" src="imagenes/banner-cobach.jpeg" width="200" height="140">
+</header>
+<body class="menu-xbox">
+    <div class="contenedor">
+    <div class="caja" onmouseover="cambio('imagenes/cultura-xbox.png')" onmouseout="volver()" onclick="entrarPagina" (culturadigital.html)><a href="culturadigital.html"> cultura digital</a></div>
+    <div class="caja" onmouseover="cambio('imagenes/sistemasdeinf-xbox.png')" onmouseout="volver()" onclick="entrarPagina"><a href="programacion.html">programacion</a></div>
+    <div class="caja" onmouseover="cambio('imagenes/')" onmouseout="volver()" onclick="entrarPagina"><a href="tallerdeculturadig.html">taller de cultura digital</a></div>
+    <div class="caja" onmouseover="cambio('imagenes/comunidadesvirtuales-xbox-removebg-preview.png')" onmouseout="volver()" onclick="entrarPagina"><a href="comunidades.html">comunidades virtuales</a></div>
+    <div class="caja" onmouseover="cambio('imagenes/gestiondearchivos-xbox.png')" onmouseout="volver()" onclick="entrarPagina"><a href="gestion.html">gestion de archivos-hojas de calculo</a></div>
+    <div class="caja" onmouseover="cambio('imagenes/ingles-xbox.png')" onmouseout="volver()" onclick="entrarPagina"><a href="ingles.html">ingles</a></div>
+    <div class="caja" onmouseover="cambio('imagenes/robotica-xbox.png')" onmouseout="volver()" onclick="entrarPagina"><a href="robotica.html">robotica</a></div>
+    </div>
+    <div class="xbox-logo-viewer">
+    <img src="imagenes/iconoxboxclassic.png" id="visor-logo" alt="Logo Materia">
+</div>
+
+<div class="contenedor-principal">
+    <audio id="sonido-hover" src="imagenes/selectionxboxclassic.mp3" preload="auto"></audio>
+<audio id="sonido-click" src="imagenes/clickxboxclassic.mp3" preload="auto"></audio>
+
+<script>
+    const visor = document.getElementById('visor-logo');
+    const logoBase = "imagenes/iconoxboxclassic.png";
+    const audioHover = document.getElementById('sonido-hover');
+    const audioClick = document.getElementById('sonido-click');
+
+    function cambio(rutaImagen) {
+        visor.src = rutaImagen;
+        visor.style.transform = "scale(1.1) rotate(5deg)";
+        
+        // Sonido al pasar el mouse
+        audioHover.currentTime = 0; 
+        audioHover.play().catch(e => console.log("Esperando interacción..."));
+    }
+
+    function volver() {
+        visor.src = logoBase;
+        visor.style.transform = "scale(1.0) rotate(0deg)";
+    }
+
+    // ESTA ES LA FUNCIÓN PARA EL CLIC
+    function entrarPagina(url) {
+        audioClick.currentTime = 0;
+        audioClick.play();
+        const audioClick = document.getElementById('sonido-click')
+         setTimeout(() => {
+        window.location.href = url;
+    }, 300); 
+        
+        // Esperamos 200ms para que se oiga el "tuc" del botón antes de irnos
+        setTimeout(() => {
+            window.location.href = url;
+        }, 200); 
+    }
+</script>
+
+</body>
+</html>

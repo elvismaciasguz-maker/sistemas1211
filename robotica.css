@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2d2d; /* El fondo gris oscuro de afuera */
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.switch-container {
+    display: flex;
+    width: 95vw; /* Ocupa casi todo el ancho de tu pantalla */
+    height: 85vh; /* Ocupa casi todo el alto */
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+/* Joy-Cons proporcionales */
+.joy-con {
+    width: 12%; /* El ancho ahora es proporcional */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.azul { 
+    background-color: #00c3e3; 
+    border-radius: 50px 0 0 50px; 
+}
+
+.rojo { 
+    background-color: #ff4554; 
+    border-radius: 0 50px 50px 0; 
+}
+
+/* Pantalla que se ajusta */
+.screen {
+    background-color: #000;
+    flex-grow: 1; /* Esto hace que la pantalla use todo el espacio sobrante */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 15px solid #1a1a1a;
+    border-bottom: 15px solid #1a1a1a;
+}
+
+.logo-switch {
+    color: white;
+    font-size: 3vw; /* El texto crece según la pantalla */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+.game-card {
+    width: 15vw;
+    height: 15vw;
+    max-width: 200px;
+    max-height: 200px;
+    background-color: #323232;
+    border: 5px solid transparent;
+    color: white;
+    font-size: 2.5vw;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.game-card:hover {
+    border-color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+}
+
+.circle { 
+    border-radius: 50%; 
+}
+
+.footer-icons { 
+    color: #555; 
+    font-size: 1.2vw; 
+    text-align: left;
+}
+
+/* Modal corregido para que se vea encima de todo */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.ventana-switch {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    text-align: center;
+    width: 40%;
+}

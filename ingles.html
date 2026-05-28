@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ingles.css">
+</head>
+<body>
+<!-- Fondo con ondas animadas -->
+    <div class="psp-background"></div>
+
+    <div class="psp-interface">
+        <div class="psp-top-info">
+            <span id="reloj">12:00 PM</span>
+        </div>
+
+        <h1 class="materia-titulo">English Course</h1>
+
+        <div class="psp-menu">
+            <button class="psp-item" onclick="abrir('Partial 1: Vocabulary & Grammar')">
+                <div class="icon">A</div>
+                <span>Partial 1</span>
+            </button>
+            <button class="psp-item" onclick="abrir('Partial 2: Reading & Writing')">
+                <div class="icon">B</div>
+                <span>Partial 2</span>
+            </button>
+            <button class="psp-item" onclick="abrir('Partial 3: Listening & Speaking')">
+                <div class="icon">C</div>
+                <span>Partial 3</span>
+            </button>
+            <button class="psp-item special" onclick="abrir('Syllabus / Study Program')">
+                <div class="icon">i</div>
+                <span>Program</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ventana Emergente -->
+    <div id="overlay" class="overlay" onclick="cerrar()">
+        <div class="psp-modal" onclick="event.stopPropagation()">
+            <h2 id="titulo-modal"></h2>
+            <div class="psp-line"></div>
+            <p>Loading lesson content... Please wait.</p>
+            <button class="btn-back" onclick="cerrar()">Back</button>
+        </div>
+    </div>
+
+    <script src="script_ingles.js"></script>
+    <script>function abrir(mensaje) {
+    document.getElementById('titulo-modal').innerText = mensaje;
+    document.getElementById('overlay').style.display = 'flex';
+}
+
+function cerrar() {
+    document.getElementById('overlay').style.display = 'none';
+}
+
+// Función para el reloj de la esquina
+function actualizarReloj() {
+    const ahora = new Date();
+    const tiempo = ahora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('reloj').innerText = tiempo;
+}
+
+setInterval(actualizarReloj, 1000);
+actualizarReloj()</script>
+    
+</body>
+</html>

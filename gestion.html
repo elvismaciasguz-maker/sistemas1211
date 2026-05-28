@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Xbox 360 Dashboard</title>
+    <link rel="stylesheet" href="gestion.css">
+</head>
+<body>
+
+    <div class="top-nav">
+        <span>inicio</span>
+        <span>social</span>
+        <span class="active">juegos</span>
+        <span>música</span>
+        <span>aplicaciones</span>
+    </div>
+
+    <div class="dashboard-container">
+        <!-- Columna Izquierda (Cuadros Verdes) -->
+        <div class="column">
+            <div class="tile green" onclick="abrir('Parcial 1: Gestión de Archivos')">
+                <div class="icon">📁</div>
+                <p>Parcial 1</p>
+            </div>
+            <div class="tile green" onclick="abrir('Parcial 2: Hojas de Cálculo')">
+                <div class="icon">📊</div>
+                <p>Parcial 2</p>
+            </div>
+            <div class="tile green" onclick="abrir('Parcial 3: Procesadores de Texto')">
+                <div class="icon">📝</div>
+                <p>Parcial 3</p>
+            </div>
+        </div>
+
+        <!-- Cuadro Central (Negro - Xbox Live) -->
+        <div class="main-tile-black" onclick="abrir('Programa de Estudio')">
+            <div class="xbox-live-content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Xbox_one_logo.svg/1024px-Xbox_one_logo.svg.png" alt="Logo" class="live-logo">
+                <h2>XBOX LIVE</h2>
+                <p>Conecta tu proyecto a internet para encontrar más información y mucho más.</p>
+            </div>
+        </div>
+
+        <!-- Columna Derecha (Cuadros Verdes) -->
+        <div class="column">
+            <div class="tile green" onclick="abrir('Amigos y Comunidad')">
+                <p>Amigos</p>
+            </div>
+            <div class="tile green" onclick="abrir('Actividad Reciente')">
+                <p>Panel de actividad</p>
+            </div>
+            <div class="tile green" onclick="abrir('Tienda de Avatares')">
+                <p>Tienda</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal (Ventana) -->
+    <div id="overlay" class="overlay" onclick="cerrar()">
+        <div class="xbox-modal">
+            <h2 id="titulo-modal"></h2>
+            <hr>
+            <p>Cargando información del sistema...</p>
+            <button class="btn-xbox" onclick="cerrar()">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="script_360.js"></script>
+    <script>function abrir(titulo) {
+    document.getElementById('titulo-modal').innerText = titulo;
+    document.getElementById('overlay').style.display = 'flex';
+}
+
+function cerrar() {
+    document.getElementById('overlay').style.display = 'none';
+}</script>
+</body>
+</html>

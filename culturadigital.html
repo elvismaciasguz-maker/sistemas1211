@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cultura Digital - Estilo Halo 2</title>
+    <link rel="stylesheet" href="culturadigital.css">
+</head>
+<body class="menu-halo2">
+
+    <div class="video-contenedor">
+        <video autoplay  muted loop playsinline id="video-halo">
+            <source src="imagenes/menu-halo2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="contenedor-menu">
+    
+        <div class="opcion-halo" onclick="abrirInfo('introduccion al BLOQUE 1', '' )">Cultura Digital 1</div>
+        <div class="opcion-halo" onclick="abrirInfo('BLOQUE 2', 'Bienvenido al bloque 2...')">Cultura Digital 2</div>
+        <div class="opcion-halo" onclick="abrirInfo('BLOQUE 3', 'Bienvenido al bloque 3...')">Cultura Digital 3</div>
+    </div>
+
+    <div id="ventana-info" class="modal-halo">
+        <div class="contenido-ventana">
+            <span class="cerrar" onclick="cerrarInfo()">&times;</span>
+            <h2 id="modal-titulo"></h2>
+            <hr>
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+
+    <script>
+        function abrirInfo(titulo, texto) {
+            document.getElementById('modal-titulo').innerText = titulo;
+            document.getElementById('modal-texto').innerText = texto;
+            document.getElementById('ventana-info').style.display = 'flex';
+        }
+        function cerrarInfo() {
+            document.getElementById('ventana-info').style.display = 'none';
+        }
+    </script>
+    
+</body>
+</html>

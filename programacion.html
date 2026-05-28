@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="programacion.css">
+</head>
+<body class="menu-wii">
+  <div class="contenedor-principal">
+    <div class="contenedor-canales">
+        <div class="canal" onmouseover="sonarHover" onclick="mostrarInfo('prog1')">Programación 1</div>
+        <div class="canal" onmouseover="sonarHover" onclick="mostrarInfo('prog2')">Programación 2</div>
+        <div class="canal" onmouseover="sonarHover" onclick="mostrarInfo('prog3')">Programación 3</div>
+           <div class="canal vacio"></div>
+        <div class="canal vacio"></div>
+        <div class="canal vacio"></div>
+    </div>
+    </div>
+
+    <div id="visor-info" class="visor-estilo">
+    <h2 id="titulo-info"></h2>
+    <p id="texto-info"></p>
+    <br>
+    <button onclick="cerrarInfo()" style="padding: 10px 30px; border-radius: 20px; border: 2px solid #ccc; cursor: pointer;">
+        Atrás
+    </button>
+</div>
+</div>
+</div>
+ <audio id="wii-hover" src="imagenes/selection-NINTENDO WII.mp3" preload="auto"></audio>
+<audio id="wii-click" src="imagenes/CANAL-NINTENDO WII.mp3" preload="auto"></audio>
+<script>
+    // Conectamos los audios una sola vez
+    const sonidoHover = document.getElementById('wii-hover');
+    const sonidoClick = document.getElementById('wii-click');
+
+    // Función para el sonido del ratón (Hover)
+    function sonarHover() {
+        if (sonidoHover) {
+            sonidoHover.currentTime = 0; 
+            sonidoHover.play().catch(e => console.log("Haz clic en la página primero para habilitar audio"));
+        }
+    }
+
+    // Función para entrar al canal (Click)
+    function mostrarInfo(materia) {
+        if (sonidoClick) {
+            sonidoClick.play();
+        }
+
+        const visor = document.getElementById('visor-info');
+        const canales = document.querySelector('.contenedor-canales');
+        const titulo = document.getElementById('titulo-info');
+        const texto = document.getElementById('texto-info');
+
+        // Cambiamos el texto según la materia
+        if (materia === 'prog1') {
+            titulo.innerText = "Programación 1";
+            texto.innerText = "Aprendimos lógica de programación y algoritmos básicos.";
+        } else if (materia === 'prog2') {
+            titulo.innerText = "Programación 2";
+            texto.innerText = "Diseño de interfaces con HTML y CSS avanzado.";
+        } else if (materia === 'prog3') {
+            titulo.innerText = "Programación 3";
+            texto.innerText = "Interactividad con JavaScript y efectos especiales.";
+        }
+
+        // Animación de Zoom
+        canales.classList.add('ocultar-canales');
+        visor.classList.add('visor-activo');
+    }
+
+    // Función para volver al menú
+    function cerrarInfo() {
+        const visor = document.getElementById('visor-info');
+        const canales = document.querySelector('.contenedor-canales');
+        visor.classList.remove('visor-activo');
+        canales.classList.remove('ocultar-canales');
+    }
+</script>
+
+</body>
+</html>

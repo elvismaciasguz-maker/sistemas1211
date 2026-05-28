@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comunidades virtuales</title>
+    <link rel="stylesheet" href="comunidades.css">
+</head>
+<body>
+    <!-- El fondo con partículas se crea con CSS -->
+    <div class="ps2-background"></div>
+
+    <div class="interface">
+        <h1 class="ps2-logo">Comunidades Virtuales</h1>
+        
+        <nav class="ps2-menu">
+            <button class="ps2-btn" onclick="abrir('Comunidades Virtuales 1')">comunidades virtuales 1</button>
+            <button class="ps2-btn" onclick="abrir('Comunidades Virtuales 2')">comunidades virtuales 2</button>
+            <button class="ps2-btn" onclick="abrir('Comunidades Virtuales 3')">comunidades virtuales 3</button>
+            <button class="ps2-btn" onclick="abrir('Programa de Estudio')">programa de estudio</button>
+        </nav>
+    </div>
+
+    <!-- Ventana Modal Estilo Consola -->
+    <div id="modal-ps2" class="modal" onclick="cerrar()">
+        <div class="ventana-ps2" onclick="event.stopPropagation()">
+            <h2 id="titulo-ps2"></h2>
+            <div class="linea-decorativa"></div>
+            <p>Cargando datos de la red...</p>
+            <button class="btn-x" onclick="cerrar()">[X] Regresar</button>
+        </div>
+    </div>
+
+    <script src="script_ps2.js"></script>
+    <script>function abrir(nombre) {
+    document.getElementById('titulo-ps2').innerText = nombre;
+    document.getElementById('modal-ps2').style.display = 'flex';
+}
+
+function cerrar() {
+    document.getElementById('modal-ps2').style.display = 'none';
+}</script>
+    
+</body>
+</html>

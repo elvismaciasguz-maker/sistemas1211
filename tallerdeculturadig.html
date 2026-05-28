@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>taller de cultura digital</title>
+    <link rel="stylesheet" href="tallerdeculturadig.css">
+</head>
+<body>
+    <div class="gc-container">
+        <!-- Título superior estilo consola -->
+        <h1 class="logo-gc">Taller de Cultura Digital</h1>
+        
+        <div class="menu-grid">
+            <button class="btn-gc" onclick="abrir('Taller de Cultura Digital 1')">Bloque 1</button>
+            <button class="btn-gc" onclick="abrir('Taller de Cultura Digital 2')">Bloque 2</button>
+            <button class="btn-gc" onclick="abrir('Taller de Cultura Digital 3')">Bloque 3</button>
+            <button class="btn-gc btn-estudio" onclick="abrir('Programa de Estudio')">Programa</button>
+        </div>
+    </div>
+
+    <!-- Ventana Desplegable (Modal) -->
+    <div id="modal-gc" class="modal" onclick="cerrar()">
+        <div class="ventana-gc" onclick="event.stopPropagation()">
+            <div class="header-gc">INFO</div>
+            <h2 id="titulo-gc"></h2>
+            <p>Accediendo a los archivos de la materia...</p>
+            <button class="btn-cerrar" onclick="cerrar()">VOLVER</button>
+        </div>
+    </div>
+
+    <script src="script_gc.js"></script>
+    <script>function abrir(titulo) {
+    document.getElementById('titulo-gc').innerText = titulo;
+    document.getElementById('modal-gc').style.display = 'flex';
+}
+
+function cerrar() {
+    document.getElementById('modal-gc').style.display = 'none';
+}</script>
+    
+</body>
+</html>

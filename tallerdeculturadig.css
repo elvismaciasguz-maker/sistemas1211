@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Color morado clásico de GameCube */
+    background-color: #4b3d8e;
+    font-family: 'Arial Black', sans-serif;
+    color: white;
+}
+
+.gc-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 50px;
+    border: 8px solid #3a2e70;
+}
+
+.logo-gc {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px #000;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-gc {
+    background-color: #6a5acd;
+    border: 5px solid #2e2659;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.2s;
+    box-shadow: 5px 5px 0px #2e2659;
+}
+
+.btn-gc:hover {
+    background-color: #836fff;
+    transform: scale(1.05);
+}
+
+/* Botón diferente para el programa */
+.btn-estudio {
+    background-color: #ff4757;
+    border-color: #9b1c28;
+    box-shadow: 5px 5px 0px #9b1c28;
+}
+
+/* Estilo de la ventana desplegable */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.ventana-gc {
+    background-color: #bcbcbc;
+    color: black;
+    border: 6px solid #000;
+    width: 350px;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.header-gc {
+    background-color: #4b3d8e;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.btn-cerrar {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}

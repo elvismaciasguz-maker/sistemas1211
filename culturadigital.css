@@ -1,0 +1,73 @@
+.menu-halo´{
+      margin: 0;
+    padding: 0;
+    background-color: #050a14; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+.video-contenedor{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#video-halo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contenedor-menu {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 132%;
+    z-index: 10;
+    
+}
+
+
+.opcion-halo {
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 15px 0; 
+    transition: 0.3s;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.opcion-halo:hover {
+    color: #00d9ff !important;
+    text-shadow: 0 0 15px #00d9ff, 0 0 30px #00d9ff;
+    transform: scale(1.1);
+}
+
+
+.modal-halo {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contenido-ventana {
+    background: #050a14;
+    border: 2px solid #00d9ff;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00d9ff;
+}

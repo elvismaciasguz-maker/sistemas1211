@@ -1,0 +1,108 @@
+.menu-wii{
+    background-color: white;
+    background-image: url(imagenes/menu-wii.jpg);
+       background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+    padding-right: 50cpx;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('imagenes/fondo-wii.jpg'); /* Tu fondo de Wii */
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.contenedor-canales {
+    display: grid;
+    grid-template-columns: repeat(4, 160px); /* 4 espacios por fila */
+    gap: 25px;
+    justify-content: center;
+     position: absolute;
+    top: 40px;    /* Lo pega a la parte superior */
+    left: 40px;   /* Lo pega a la izquierda */
+    display: grid;
+    grid-template-columns: repeat(2, 160px); /* 2 columnas para que sea un bloque compacto */
+    gap: 15px;
+    
+}
+
+.canal {
+    background: linear-gradient(to bottom, #fdfdfd, #e0e0e0);
+    border: 2px solid #b5b5b5;
+    border-radius: 20px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: inset 0 0 8px white;
+}
+
+/* El brillo azul de selección de la Wii */
+.canal:hover {
+    border: 3px solid #3eacec;
+    box-shadow: 0 0 15px #3eacec;
+    transform: scale(1.05);
+}
+
+.canal.vacio {
+    background: transparent;
+    border: 2px dashed #d1d1d1; /* El borde punteado de los canales vacíos */
+    cursor: default;
+}
+.visor-estilo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5); /* Empieza pequeño y centrado */
+    opacity: 0;
+    visibility: hidden;
+    
+    width: 500px;
+    padding: 40px;
+    background: white;
+    border: 6px solid #3eacec;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote tipo Wii */
+    z-index: 100;
+
+}
+#titulo-info {
+    font-size: 26px;
+    color: #444;
+    margin-bottom: 5px;
+    font-family: 'Arial', sans-serif;
+}
+
+#texto-info {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.5;
+}
+.visor-activo {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+.ocultar-canales {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: 0.5s;
+}

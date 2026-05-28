@@ -1,0 +1,106 @@
+
+body{
+    background-color: #000;
+    
+}
+
+.contenedor{
+    color: #00ff0d;
+    background-color: black;
+    padding: 1px;
+    margin: 1px;
+    border: 3px solid black;
+    display: flex;
+    flex-flow: column;
+    display: flex;
+    flex-direction: column; 
+}
+.caja{
+    background-color: #00ff00;
+    font-size: 15px;
+    padding: 1px;
+    border: 3px solid green;
+    margin: 3px;
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, rgba(31, 137, 31, 0.9) 0%, rgba (0, 0, 0, 1 100%));
+    border: 1px solid #00ff00;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0 ,255 ,0 0.5 ); 
+    border-left: 4px solid#00ff00;
+    position: relative;
+    transition: 0.2s;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px 15px 4px 15px;
+    background: rgb(23, 105, 36);
+    border: 1px solid #00ff00;
+    padding:15px 30px;
+    display: inline-block;
+
+}
+.caja:hover{
+    background: rgb(172, 234, 90);
+    color: black;
+    transform: translate(10px);
+}
+.banner{
+    display: flex;
+    flex-flow: row;
+
+}
+.menu-xbox{
+    margin: 0;
+    background-image: url(imagenes/menu-xbox.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+    padding-right: 50cpx;
+}
+.caja a{
+   color: #00ff00;
+   text-decoration: none;
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+.caja a:visited{
+    color: #00ff00;
+}
+/* Contenedor de la imagen del logo */
+.xbox-logo-viewer {
+    position: fixed;
+    left: 30%; /* Lo pone a la derecha */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#visor-logo {
+    max-width: 100%;
+    filter: drop-shadow(0 0 20px #00ff00); /* Brillo verde Xbox */
+    transition: all 0.3s ease;
+}
+
+/* Ajuste para que tus botones no se encimen con el logo */
+.contenedor-principal {
+    margin-left: 10%; /* Empuja los botones a la izquierda */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+ 
